@@ -12,6 +12,7 @@ import ru.kd.formula1.R
 
 
 class DriverFragment : Fragment(), DriverContract.View {
+
     private lateinit var presenter: DriverContract.Presenter
 
     override fun showDriver(driverViewModel: DriverViewModel) {
@@ -21,9 +22,7 @@ class DriverFragment : Fragment(), DriverContract.View {
         driverName.text = driverViewModel.name
     }
 
-    override fun getAppContext(): Context? {
-        return this.context
-    }
+    override fun getAppContext(): Context? = context
 
     override fun attachPresenter(presenter: DriverContract.Presenter) {
         this.presenter = presenter

@@ -20,9 +20,7 @@ class RacesFragment : Fragment(), RacesContract.View {
         //todo show topListFragment
     }
 
-    override fun getAppContext(): Context? {
-        return context
-    }
+    override fun getAppContext(): Context? = context
 
     override fun attachPresenter(presenter: RacesContract.Presenter) {
         this.presenter = presenter

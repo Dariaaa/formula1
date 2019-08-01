@@ -3,6 +3,7 @@ package ru.kd.formula1.toplist
 import android.content.Context
 
 class TopListPresenter:TopListContract.Presenter{
+
     private lateinit var view: TopListContract.View
 
     override fun loadDriverInfo(driverId: String) {

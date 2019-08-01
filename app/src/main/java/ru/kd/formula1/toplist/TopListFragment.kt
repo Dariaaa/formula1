@@ -30,9 +30,7 @@ class TopListFragment : Fragment() , TopListContract.View{
         this.presenter = presenter
     }
 
-    override fun getAppContext(): Context? {
-        return this.context
-    }
+    override fun getAppContext(): Context?  = context
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
