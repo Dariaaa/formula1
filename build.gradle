@@ -22,6 +22,9 @@ allprojects {
         
     }
 }
+ext{
+    nav_version = "2.1.0-beta02"
+}
 
 task clean(type: Delete) {
     delete rootProject.buildDir
