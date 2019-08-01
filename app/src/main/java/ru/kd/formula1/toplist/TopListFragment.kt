@@ -34,6 +34,13 @@ class TopListFragment : Fragment() , TopListContract.View{
         return this.context
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (savedInstanceState==null){
+            presenter.loadTopList()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val presenter = TopListPresenter()
