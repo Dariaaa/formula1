@@ -9,9 +9,9 @@ interface DriverContract{
         fun getAppContext(): Context?
     }
     interface Presenter{
-        fun loadDriverInfo()
         fun attach(view: View)
         fun getContext(): Context?
+        fun loadDriverInfo(driverId: String?)
 
     }
 }

@@ -3,6 +3,7 @@ package ru.kd.formula1.driver
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -30,8 +31,10 @@ class DriverFragment : Fragment(), DriverContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (savedInstanceState == null) {
-            presenter.loadDriverInfo()
+        if (arguments!= null) {
+            val driverId = arguments?.getString("driver_id")
+            Log.d(TAG,"driver_id $driverId")
+            presenter.loadDriverInfo(driverId)
         }
     }
 
@@ -50,5 +53,6 @@ class DriverFragment : Fragment(), DriverContract.View {
         return inflater.inflate(R.layout.fragment_driver, container, false)
     }
 
+    private val TAG = "DriverFragment"
 
 }

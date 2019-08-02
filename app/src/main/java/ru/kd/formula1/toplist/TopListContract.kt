@@ -10,10 +10,10 @@ interface TopListContract{
         fun getAppContext(): Context?
     }
     interface Presenter{
-        fun loadTopList()
         fun loadDriverInfo(driverId: String)
         fun getContext(): Context?
         fun attach(view:View)
+        fun loadTopList(season: Int?, round: Int?)
 
     }
 }

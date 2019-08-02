@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_races.*
 import ru.kd.formula1.R
@@ -16,8 +19,10 @@ class RacesFragment : Fragment(), RacesContract.View {
 
     private lateinit var presenter: RacesContract.Presenter
 
+
     override fun showRaceResult(season: Int, round: Int) {
-        //todo show topListFragment
+        val bundle = bundleOf("season" to season,"round" to round)
+        findNavController().navigate(R.id.action_show_top_list,bundle)
     }
 
     override fun getAppContext(): Context? = context

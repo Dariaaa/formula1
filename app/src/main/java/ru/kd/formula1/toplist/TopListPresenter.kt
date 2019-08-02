@@ -16,7 +16,8 @@ class TopListPresenter:TopListContract.Presenter{
         this.view = view
     }
 
-    override fun loadTopList() {
+    override fun loadTopList(season: Int?, round: Int?) {
+        //todo load data
         val result =  TopListViewModel(listOf(TopListViewModelItem(
             "test", "test",1,50)))
         view.showTopList(result)
