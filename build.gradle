@@ -27,6 +27,7 @@ ext{
     fasterxml_databind_version='2.9.8'
     rxjava2_version = '2.1.8'
     rxandroid_version = '2.0.1'
+    nav_version = "2.1.0-beta02"
 }
 
 task clean(type: Delete) {
