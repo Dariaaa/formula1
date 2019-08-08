@@ -4,42 +4,43 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:id="@+id/item_layout"
+        android:theme="@style/Formula1Theme"
         android:layout_height="wrap_content">
 
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    style="@style/RaceCard">
 
         <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/item_num"
-                android:layout_alignParentTop="true"
-                android:textSize="20sp"/>
-        <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
-                                                      android:layout_height="wrap_content"
-                                                      android:orientation="vertical"
-                                                      android:layout_toEndOf="@id/item_num"
-        android:gravity="center">
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/item_title"
-                    android:layout_alignParentTop="true"
-                    android:layout_toRightOf="@id/item_num"
-                    android:gravity="center"
-                    android:textSize="20sp"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/item_date"
+                android:text="May 1"
+                android:layout_centerVertical="true"
+                style="@style/AccentText"
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/item_descr"
-                    android:layout="@+id/person_photo"
-                    android:layout_toRightOf="@id/item_num"
-                    android:maxLength="100"
-                    android:layout_below="@id/item_title"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                android:layout_margin="10dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/item_race_name"
+                android:layout_margin="5dp"
+                style="@style/PrimaryText"
+                android:text="Race name"
+                android:layout_toEndOf="@+id/item_date"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/item_circuit_name"
+                android:layout_margin="5dp"
+                style="@style/NormalText"
+                android:text="circuit: circuit name"
+                android:layout_below="@+id/item_race_name"
+                android:layout_toEndOf="@id/item_date"
+                android:layout_marginTop="20dp" android:layout_marginBottom="10dp"/>
 
 
     </RelativeLayout>

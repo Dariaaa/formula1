@@ -1,5 +1,6 @@
 package ru.kd.formula1.races
 
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,16 +37,16 @@ class RacesListAdapter(private val list:List<RacesViewModelItem>,
 
     class ListViewHolder(view:View): RecyclerView.ViewHolder(view){
         var layout = itemView.findViewById<CardView>(R.id.item_layout)
-        var title = layout.findViewById<TextView>(R.id.item_title)
-        var num = layout.findViewById<TextView>(R.id.item_num)
-        var descr = layout.findViewById<TextView>(R.id.item_descr)
+        var date = layout.findViewById<TextView>(R.id.item_date)
+        var race_name = layout.findViewById<TextView>(R.id.item_race_name)
+        var circuit = layout.findViewById<TextView>(R.id.item_circuit_name)
 
 
         fun bind(item: RacesViewModelItem) {
-            title.text = item.raceName
-            num.text = SimpleDateFormat("dd.MM.yy").format(item.raceDate)
-            descr.text = item.circuitName
-            //todo add another race fields
+            race_name.text = item.raceName
+
+            date.text = DateFormat.format("M d",item.raceDate)
+            circuit.text = item.circuitName
         }
 
     }
